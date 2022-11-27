@@ -8,8 +8,7 @@ SECRET_KEY = "nooo"
 
 DEBUG = True
 
-ALLOWED_HOSTS = env(
-    'ALLOWED_HOSTS', default='localhost').split(', ')
+ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
