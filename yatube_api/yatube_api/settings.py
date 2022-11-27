@@ -1,19 +1,12 @@
 import os
 from datetime import timedelta
 
-import environ
-
-env = environ.Env()
-
-environ.Env.read_env()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = env(
-    'SECRET_KEY',
-    default="unsafe-secret-key-45t548fh48fh4gefgh4734753erhg#$@#$")
+SECRET_KEY = "nooo"
 
-DEBUG = env('DEBUG', default='True') == 'True'
+DEBUG = True
 
 ALLOWED_HOSTS = env(
     'ALLOWED_HOSTS', default='localhost').split(', ')
