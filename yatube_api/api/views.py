@@ -17,7 +17,7 @@ User = get_user_model()
 
 
 class PostViewSet(ModelViewSet):
-    """Публикации пользователей."""
+    """ПУБЛИКАЦИИ"""
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = (IsAuthorOrReadOnly, )
@@ -28,14 +28,14 @@ class PostViewSet(ModelViewSet):
 
 
 class GroupViewSet(ReadOnlyModelViewSet):
-    """Группы публикаций по теме."""
+    """ГРУППЫ"""
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = (AllowAny, )
 
 
 class CommentViewSet(ModelViewSet):
-    """Комментарии к публикации."""
+    """КОММЕНТАРИИ"""
     serializer_class = CommentSerializer
     permission_classes = (IsAuthorOrReadOnly, )
 
@@ -51,7 +51,7 @@ class CommentViewSet(ModelViewSet):
 
 
 class FollowViewSet(CreateModelMixin, ListModelMixin, GenericViewSet):
-    """Подписки на авторов."""
+    """ППОДПИСЧИКИ"""
     serializer_class = FollowSerializer
     permission_classes = (IsAuthenticated, )
     filter_backends = (filters.SearchFilter, )

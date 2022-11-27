@@ -2,7 +2,7 @@ from rest_framework.permissions import SAFE_METHODS, BasePermission
 
 
 class IsAuthorOrReadOnly(BasePermission):
-    """Allows access (change/delete) only to author user."""
+    """ДОСТУП"""
     message = ''
 
     def has_permission(self, request, view):
