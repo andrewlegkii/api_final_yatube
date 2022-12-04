@@ -1,12 +1,32 @@
 # Проект «API для Yatube»
-В API для Yatube реализованы следующие задачи
-Вы можете создавать посты
-Коментировать посты
-Делать подписки на авторов
-Создавать группы
 
-$ pip install virtualenv
-$ virtualenv 'название виртуального окружения'
-$ venv 'название виртуального окружения'/Scripts(или bin для linux)/activate
-$ pip install -r requirements.txt
-$ python manage.py runserver
+# Описание проекта
+API доступен только аутентифицированным пользователям. В проекте аутентификация осуществляется по токену TokenAuthentication (Реализована аутентификация по JWT-токену).
+Аутентифицированный пользователь авторизован на изменение и удаление своего контента; в остальных случаях доступ предоставляется только для чтения. 
+
+# Запуск проекта
+Клонирование репозитория
+git clone https://github.com/andrewlegkii/api_final_yatube.git
+Откройте в своем редакторе кода локальный проекта из репозитория GitHub, клонированного ранее
+
+Развертывание в репозитории виртуального окружения
+python3 -m venv venv
+Запуск виртуального окружения
+source venv/Scripts/activate
+Установка зависимостей в виртуальном окружении
+pip install -r requirements.txt
+Выполнение миграций
+python manage.py migrate
+Запуск проекта
+python manage.py runserver
+
+# Технологии
+Python3
+Django REST Framework
+API REST
+Postman
+SQLite3
+Simple-JWT
+
+# Пример использования
+Пример POST-запроса с токеном: добавление нового поста. POST .../api/v1/posts/
